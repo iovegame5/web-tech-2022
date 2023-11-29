@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>Muesong.Shop</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <link rel="icon" type="image/x-icon" href="pic/favicon.png">
+  <script src="script.js"></script>
+  <script type="module" src="main.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://kit.fontawesome.com/04360f86ca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <my-header></my-header>
+
+  <div class="page-product" id="mydiv">
+    <div class="product-image">
+      <div class="image-slide image-slide-display">
+        <img class="mySlides fade" id='pic' src="pic/shoes10-front.jpg">
+        <img class="mySlides fade" id='pic' src="pic/shoes10-back.jpg">
+
+        <button class="w3-button w3-display-left w3-white w3-hover-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right w3-white w3-hover-black" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+    </div>
+    <div class="product-description">
+      <p class="product-category">รองเท้าผ้าใบ</p>
+      <p class=" hero__headline">ADIDAS 4D KRAZED SHOES</p>
+      <p class="product-price">฿4200.00</p>
+      <br>
+      <button id="addbtn" class="btn btn--primary product-button" onclick="addItem(70)">เพิ่มสินค้าลงตะกร้า</button>
+      <div class="description">
+        <input type="checkbox" id="faq-1">
+        <h2><label class="detail-header" for="faq-1">รายละเอียดสินค้า <i class="fa-sharp fa-solid fa-caret-down"></i></label>
+        </h2>
+        <p class="detail">- อัปเปอร์ทำจากวัสดุสังเคราะห์ เย็บเข้ากับโอเวอร์เลย์วัสดุสังเคราะห์<br>- พื้นชั้นกลาง adidas
+          4D และ EVA<br>- ขนาด : 27 cm <br>- สี : ขาว</p>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <my-footer></my-footer>
+</body>
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length};
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    x[slideIndex - 1].style.display = "block";
+  }
+</script>
+
+</html>

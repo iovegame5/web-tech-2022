@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>Muesong.Shop</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <link rel="icon" type="image/x-icon" href="pic/favicon.png">
+  <script src="script.js"></script>
+  <script type="module" src="main.js"></script>
+  <script src="https://kit.fontawesome.com/04360f86ca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="payment-container">
+    <div class="payment-left">
+      <div class="payment-logo-container">
+        <a href="index.html"><img class="payment-logo" src="pic/muesong_logo.png"></a>
+      </div>
+      <br>
+      <div class="payment-info"></div>
+
+
+      <form role="form" id="myform" action="card.html" method="GET">
+
+
+        <div>
+
+          <input class="form-input" type="text" id="name" name="name" placeholder="ชื่อ">
+          <a id="getData" href=""></a>
+
+        </div>
+        <div>
+
+          <input class="form-input" type="text" id="surname" name="surname" placeholder="นามสกุล">
+        </div>
+        <div>
+
+          <textarea class="form-input" cols="60" rows="5" id="address" name="address"
+            placeholder="รายละเอียดที่อยู่"></textarea>
+        </div>
+        <div>
+
+          <input class="form-input" type="text" id="subdistrict" name="subdistrict" placeholder="แขวง/ตำบล">
+        </div>
+        <div>
+
+          <input class="form-input" type="text" id="district" name="district" placeholder="เขต/อำเภอ">
+        </div>
+        <div>
+
+          <select id="province" class="form-input">
+            <option value="000" selected="">เลือกจังหวัด</option>
+            <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+            <option value="กระบี่">กระบี่ </option>
+            <option value="กาญจนบุรี">กาญจนบุรี </option>
+            <option value="กาฬสินธุ์">กาฬสินธุ์ </option>
+            <option value="กำแพงเพชร">กำแพงเพชร </option>
+            <option value="ขอนแก่น">ขอนแก่น</option>
+            <option value="จันทบุรี">จันทบุรี</option>
+            <option value="ฉะเชิงเทรา">ฉะเชิงเทรา </option>
+            <option value="ชัยนาท">ชัยนาท </option>
+            <option value="ชัยภูมิ">ชัยภูมิ </option>
+            <option value="ชุมพร">ชุมพร </option>
+            <option value="ชลบุรี">ชลบุรี </option>
+            <option value="เชียงใหม่">เชียงใหม่ </option>
+            <option value="เชียงราย">เชียงราย </option>
+            <option value="ตรัง">ตรัง </option>
+            <option value="ตราด">ตราด </option>
+            <option value="ตาก">ตาก </option>
+            <option value="นครนายก">นครนายก </option>
+            <option value="นครปฐม">นครปฐม </option>
+            <option value="นครพนม">นครพนม </option>
+            <option value="นครราชสีมา">นครราชสีมา </option>
+            <option value="นครศรีธรรมราช">นครศรีธรรมราช </option>
+            <option value="นครสวรรค์">นครสวรรค์ </option>
+            <option value="นราธิวาส">นราธิวาส </option>
+            <option value="น่าน">น่าน </option>
+            <option value="นนทบุรี">นนทบุรี </option>
+            <option value="บึงกาฬ">บึงกาฬ</option>
+            <option value="บุรีรัมย์">บุรีรัมย์</option>
+            <option value="ประจวบคีรีขันธ์">ประจวบคีรีขันธ์ </option>
+            <option value="ปทุมธานี">ปทุมธานี </option>
+            <option value="ปราจีนบุรี">ปราจีนบุรี </option>
+            <option value="ปัตตานี">ปัตตานี </option>
+            <option value="พะเยา">พะเยา </option>
+            <option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา </option>
+            <option value="พังงา">พังงา </option>
+            <option value="พิจิตร">พิจิตร </option>
+            <option value="พิษณุโลก">พิษณุโลก </option>
+            <option value="เพชรบุรี">เพชรบุรี </option>
+            <option value="เพชรบูรณ์">เพชรบูรณ์ </option>
+            <option value="แพร่">แพร่ </option>
+            <option value="พัทลุง">พัทลุง </option>
+            <option value="ภูเก็ต">ภูเก็ต </option>
+            <option value="มหาสารคาม">มหาสารคาม </option>
+            <option value="มุกดาหาร">มุกดาหาร </option>
+            <option value="แม่ฮ่องสอน">แม่ฮ่องสอน </option>
+            <option value="ยโสธร">ยโสธร </option>
+            <option value="ยะลา">ยะลา </option>
+            <option value="ร้อยเอ็ด">ร้อยเอ็ด </option>
+            <option value="ระนอง">ระนอง </option>
+            <option value="ระยอง">ระยอง </option>
+            <option value="ราชบุรี">ราชบุรี</option>
+            <option value="ลพบุรี">ลพบุรี </option>
+            <option value="ลำปาง">ลำปาง </option>
+            <option value="ลำพูน">ลำพูน </option>
+            <option value="เลย">เลย </option>
+            <option value="ศรีสะเกษ">ศรีสะเกษ</option>
+            <option value="สกลนคร">สกลนคร</option>
+            <option value="สงขลา">สงขลา </option>
+            <option value="สมุทรสาคร">สมุทรสาคร </option>
+            <option value="สมุทรปราการ">สมุทรปราการ </option>
+            <option value="สมุทรสงคราม">สมุทรสงคราม </option>
+            <option value="สระแก้ว">สระแก้ว </option>
+            <option value="สระบุรี">สระบุรี </option>
+            <option value="สิงห์บุรี">สิงห์บุรี </option>
+            <option value="สุโขทัย">สุโขทัย </option>
+            <option value="สุพรรณบุรี">สุพรรณบุรี </option>
+            <option value="สุราษฎร์ธานี">สุราษฎร์ธานี </option>
+            <option value="สุรินทร์">สุรินทร์ </option>
+            <option value="สตูล">สตูล </option>
+            <option value="หนองคาย">หนองคาย </option>
+            <option value="หนองบัวลำภู">หนองบัวลำภู </option>
+            <option value="อำนาจเจริญ">อำนาจเจริญ </option>
+            <option value="อุดรธานี">อุดรธานี </option>
+            <option value="อุตรดิตถ์">อุตรดิตถ์ </option>
+            <option value="อุทัยธานี">อุทัยธานี </option>
+            <option value="อุบลราชธานี">อุบลราชธานี</option>
+            <option value="อ่างทอง">อ่างทอง </option>
+
+
+          </select>
+        </div>
+        <div>
+          <div>
+
+            <input class="form-input" type="text" id="phone" name="phone" placeholder="เบอร์โทรศัพท์">
+          </div>
+          <div>
+            <select id="pay" class="form-input">
+              <option value="000" selected=""> เลือกวิธีการชำระเงิน</option>
+              <option value="บัตรเครดิต">บัตรเครดิต</option>
+              <option value="เก็บเงินปลายทาง">เก็บเงินปลายทาง</option>
+
+            </select>
+          </div>
+
+
+          <input class="form-input" type="text" id="mail" name="mail" placeholder="รหัสไปรษณีย์">
+        </div>
+        <br>
+        <button onclick="saveform()" type="button" class="btn btn-default">ยืนยันข้อมูล</button>
+        <button onclick="history.go(-1)" type="button" class="btn btn-default">กลับไปยังหน้าที่แล้ว</button>
+      </form>
+    </div>
+    <div class="payment-right">
+      <div class="payment-item-list">
+
+
+      </div>
+      <div style="margin:2em;">
+        <p style="float:left;">ทั้งหมด: </p>
+        <p id="payment-price" style="float:right;">0 บาท</p>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    function saveform() {
+      let check = 0;
+      let fname = document.forms.myform.name.value;
+      if (fname.length < 1) {
+        alert("โปรดกรอกชื่อให้ถูกต้อง");
+        check = 1;
+        return false;
+      }
+      let sname = document.forms.myform.surname.value;
+      if (sname.length < 1) {
+        alert("โปรดกรอกนามสกุลให้ถูกต้อง");
+        check = 1;
+        return false;
+      }
+      let add = document.forms.myform.address.value;
+      if (add.length < 1) {
+        alert("โปรดกรอกที่อยู่ให้ถูกต้อง");
+        check = 1;
+        return false;
+      }
+      let sub = document.forms.myform.subdistrict.value;
+      if (sub.length < 1) {
+        alert("โปรดกรอกแขวง/ตำบลให้ถูกต้อง");
+        check = 1;
+        return false;
+      }
+      let dis = document.forms.myform.district.value;
+      if (dis.length < 1) {
+        alert("โปรดกรอกเขต/อำเภอให้ถูกต้อง");
+        check = 1;
+        return false;
+      }
+      let pro = document.forms.myform.province.value;
+      if (pro == "000") {
+        alert("โปรดเลือกจังหวัด");
+        check = 1;
+        return false;
+      }
+      let pho = document.forms.myform.phone.value;
+      if (pho.length < 1) {
+        alert("โปรดกรอกเบอร์โทรศัพท์ให้ถูกต้อง");
+        check = 1;
+        return false;
+      }
+      let pay = document.forms.myform.pay.value;
+      if (pay == "000") {
+        alert("โปรดเลือกวิธีชำระเงิน");
+        check = 1;
+        return false;
+      }
+      let mail = document.forms.myform.mail.value;
+      if (mail.length < 1) {
+        alert("โปรดกรอกรหัสไปรษณีย์ให้ถูกต้อง");
+        check = 1;
+        return false;
+      }
+      if (check == 0) {
+        const name = document.getElementById("name").value;
+        const lname = document.getElementById("surname").value;
+        const add = document.getElementById("address").value;
+        const sub = document.getElementById("subdistrict").value;
+        const dis = document.getElementById("district").value;
+        const pro = document.getElementById("province").value;
+        const mail = document.getElementById("mail").value;
+        const pay = document.getElementById("pay").value;
+        const phone = document.getElementById("phone").value;
+        localStorage.setItem('firstname', name);
+        localStorage.setItem("lastname", lname);
+        localStorage.setItem("address", add);
+        localStorage.setItem("subdistrict", sub);
+        localStorage.setItem("district", dis);
+        localStorage.setItem("province", pro);
+        localStorage.setItem("mail", mail);
+        localStorage.setItem("phone", phone);
+        localStorage.setItem("pay", pay);
+        window.location.href = "card.html";
+      }
+
+    }
+
+
+    let div = document.getElementsByClassName("payment-item-list");
+    let payment = getTotalPrice();
+    for (let product of cart) {
+      let name = product.name;
+      let quantity = product.quantity;
+      let price = parseInt(product.price) * parseInt(product.quantity);
+      let img = product.img[0];
+      let id = product.id;
+
+      for (let i = 0; i < div.length; i++) {
+        div[i].innerHTML += `  <div class="payment-item">
+                <div class="payment-pic-container">
+                <span class="payment-item-count">${quantity}</span>
+                <img src="${img}">
+                </div>
+                <div class="payment-item-name">
+                    <p>${name}</p>
+                </div>
+               
+                <div class="payment-item-price">
+                    <p>฿${price} บาท</p>
+                </div>
+                
+            </div>`
+      }
+
+
+    }
+    document.getElementById("payment-price").innerHTML = `${payment} บาท`
+
+
+
+  </script>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>Muesong.Shop</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <link rel="icon" type="image/x-icon" href="pic/favicon.png">
+  <script src="script.js"></script>
+  <script type="module" src="main.js"></script>
+</head>
+
+<body>
+  <my-header></my-header>
+  <div class="page" id='page1'>
+  </div>
+  <div class='page'>
+    <div class="containerr">
+      <!--Area of the images-->
+      <div class="wrapper">
+        <img src="pic/slideshow_bg1.jpg">
+        <img src="pic/slideshow_bg2.jpg">
+        <img src="pic/slideshow_bg3.jpg">
+        <img src="pic/slideshow_bg4.jpg">
+      </div>
+
+    </div>
+    </a>
+  </div>
+  <div class="page" id='page2'>
+    <div class="hero__content-inner hero__content-inner--left">
+      <div class="container container--medium">
+        <h3 class="hero__headline">หาของที่ใช่ไม่เจอ?</h3>
+        <br>
+
+        <span onClick="window.location.reload();" class="hero__btn btn btn--primary">สุ่มสินค้าของเราขึ้นมา</span>
+        <div class="random-product">
+          <br> <br>
+          <div class="row" id='product-random-show'>
+            <script type="module">
+              import data from './item.json' assert {type: 'json'};
+              let mydiv = document.getElementById('product-random-show');
+              for (var i = 0; i < 3; i++) {
+                var soom = Math.floor(Math.random() * 79 + 1);
+                console.log(soom);
+                let name = data[soom].name;
+                let href = data[soom].href;
+                let price = data[soom].price;
+                let img = data[soom].img[0];
+                let subtype = data[soom].subtype;
+                mydiv.innerHTML += `
+                            <div class="product-col product-card2">
+                                <a href="${href}">
+                                    <div class="product-img">
+                                        <img src="${img}" style="width:300px;height:350px;">
+                                    </div>
+                                </a>
+                                <div class="product-detail">
+                                    <p class="subtype2">${subtype}</p>
+                                    <a href="${href}">
+                                        <h2 class="product-name">${name}</h2>
+                                    </a>
+                                    <p>฿${price}.00</p>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+
+                      
+         `
+              }
+
+
+
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <my-footer></my-footer>
+</body>
+
+</html>

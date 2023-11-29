@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muesong.Shop</title>
+  <link href="card.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/x-icon" href="pic/favicon.png">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <!-- 	<div class="blog">Visit <a href="#" target="_blank">My Blog</a></div> -->
+  <div class="container">
+    <div class="receipt_box">
+      <div class="head">
+        <div class="logo">
+          <img src="pic/muesong_logo.png">
+        </div>
+        <div class="number">
+          <div id="wow"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="info">
+          <div class="welcome">สวัสดี, <span id="name"></span></div>
+           
+        </div>
+        <div class="add" ><b>ที่อยู่ที่ต้องจัดส่ง:</b> <span id="address"></span></div>
+          
+          <div class="payja" ><b>วิธีการชำระเงิน:</b> <span id="pay"></span></div>
+            
+            <div class="weladd" ><b>เบอร์โทรศัพท์:</b> <span id="phone"></span></div>
+      </div>
+        
+        <div class="cart">
+          <div class="title">ตะกร้า</div>
+          <div class="content">
+            <ul class="cart_list" id="mycartlist">
+              <!--               <li class="cart_item">
+                <span class="index">1</span>
+                <span class="name">T-Shirt Locaste</span>
+                <span class="price">$48.00</span>
+              </li>
+              <li class="cart_item">
+                <span class="index">2</span>
+                <span class="name">Sikers Nike</span>
+                <span class="price">$125.00</span>
+              </li>
+              <li class="cart_item">
+                <span class="index">3</span>
+                <span class="name">All Stars</span>
+                <span class="price">$69.00</span>
+              </li> -->
+            </ul>
+            <div class="total">
+              <span style="font-size: 16px;">ยอดรวม </span>
+              <span id="totalprice" class="total_price">฿0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script>
+    const firstname = localStorage.getItem('firstname');
+    const lastname = localStorage.getItem("lastname");
+    const add = localStorage.getItem("address");
+    const sub = localStorage.getItem("subdistrict");
+    const dis = localStorage.getItem("district");
+    const pro = localStorage.getItem("province");
+    const mail = localStorage.getItem("mail");
+    const pay = localStorage.getItem("pay");
+    const phone = localStorage.getItem("phone");
+     document.getElementById("name").innerHTML =`${firstname} ${lastname}`
+    document.getElementById("address").innerHTML =`${add}   เเขวง/ตำบล:  ${sub}     เขต/อำเภอ: ${dis}   จังหวัด: ${pro}  รหัสไปรษณีย์ : ${mail}`
+    document.getElementById("pay").innerHTML =`${pay}`
+    document.getElementById("phone").innerHTML =`${phone}`
+    
+    showproduct();
+    function showproduct() {
+      let num = 1;
+      for (let product of cart) {
+
+        let name = product.name;
+        let quantity = product.quantity;
+        let price = product.price;
+        let allprice = getTotalPrice();
+        document.getElementById("totalprice").innerHTML = `฿${allprice}.00 บาท`
+        document.getElementById("mycartlist").innerHTML += `   <li class="cart_item">
+                <span class="index">${num}</span>
+                <span class="name">${name} x ${quantity}</span>
+                <span class="price">฿${price}.00 บาท</span>
+              </li>`;
+        num++;
+
+
+      }
+    }
+
+    theDate();
+
+    function theDate() {
+      var date = new Date();
+      var months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+      var currentDate = date.getDate();
+      var month = months[date.getMonth()];
+      var year = date.getFullYear();
+
+      var todaysDate = document.getElementById("wow").innerHTML = currentDate + "/" + month + "/" + year;
+    }
+
+  </script>
+
+</body>
+
+</html>

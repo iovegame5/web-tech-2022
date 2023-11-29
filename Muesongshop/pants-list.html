@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>Muesong.Shop</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <link rel="icon" type="image/x-icon" href="pic/favicon.png">
+  <script src="script.js"></script>
+  <script type="module" src="main.js"></script>
+</head>
+
+<body>
+  <my-header></my-header>
+  <div class="product-page">
+    <div class="header">
+      <h1>กางเกงขายาว</h1>
+    </div>
+     <div class="collection-top-container">
+      <div class="collection-top-left"></div>
+      <div class="collection-top-mid">
+        <a href="index.html">หน้าแรก</a>
+        /
+        <a href="">กางเกงขายาว</a>
+      </div>
+      <div class="collection-top-right">
+        <button class="grid-button" onclick="ChangeToFour()" id="gridbtn1">
+          <i class='fa fa-square'></i>
+          <i class='fa fa-square'></i>
+          <i class='fa fa-square'></i>
+          <i class='fa fa-square'></i>
+        </button>
+
+        <button class="grid-button" onclick="ChangeToTwo()" id="gridbtn2">
+          <i class='fa fa-square'></i>
+          <i class='fa fa-square'></i>
+        
+        </button>
+      </div>
+    </div>
+    <div class="product-list" id='product-list-tops'>
+      <!-- product1 -->
+
+      <script type="module">
+        import data from './item.json' assert {type: 'json'};
+         let mydiv = document.getElementById('product-list-tops');
+        let num =0;
+         for (let i = 0; i < data.length; i++) {
+           if (data[i].type == "กางเกง"){
+            if(data[i].subtype == "กางเกงขายาว"){
+            num++;
+              let name = data[i].name;
+           let href = data[i].href;
+           let price = data[i].price;
+           let img = data[i].img[0];
+           let subtype = data[i].subtype;
+           mydiv.innerHTML += `<div class="product-card">
+         <a href="${href}">
+           <div class="product-img">
+             <img
+               src="${img}">
+           </div>
+         </a>
+         <p class="subtype">${subtype}</p>
+         <a href="${href}">
+           <h2>${name}</h2>
+         </a>
+         <p>฿${price}.00</p>
+       </div>`
+      }
+     }
+         }
+          let container = document.querySelector(".collection-top-left");
+        container.innerHTML += `<p class=> ${num} สินค้า </p>`;
+ 
+       </script>
+    </div>
+  </div>
+
+  <my-footer></my-footer>
+</body>
+
+</html>
